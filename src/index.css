@@ -1,19 +1,12 @@
 @import "tailwindcss";
 
-/* Base layout */
-html, body, #root { height: 100%; }
-html, body {
-  background: #ffffff; /* unified light theme */
-  color-scheme: light;
-  margin: 0;
+/* Keep the overall app background white so no dark band appears under the footer */
+html, body, #root {
+  min-height: 100%;
+  background: #ffffff;
 }
 
-/* Optional: break possible collapsing margins at the end of main before footer */
-main {
-  padding-bottom: 1px; /* tiny padding prevents bottom-margin collapse */
-  margin-bottom: -1px; /* visually cancels the extra pixel */
+/* Optional: ensure your main wrapper stays white too */
+main, .app, .layout {
+  background: #ffffff;
 }
-
-/* If you prefer utility classes instead of CSS:
-   Add to your <main> element: "relative pb-px -mb-px"
-*/
