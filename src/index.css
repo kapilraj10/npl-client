@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+/* Base styles and ensure the whole app has a dark background. */
+html, body, #root {
+  height: 100%;
+}
+html, body {
+  background: #0C0F14; /* matches sections */
+  color-scheme: dark;
+  margin: 0;
+}
+
+/* Optional: break possible collapsing margins at the end of main before footer */
+main {
+  padding-bottom: 1px; /* tiny padding prevents bottom-margin collapse */
+  margin-bottom: -1px; /* visually cancels the extra pixel */
+}
+
+/* If you prefer utility classes instead of CSS:
+   Add to your <main> element: "relative pb-px -mb-px"
+*/
