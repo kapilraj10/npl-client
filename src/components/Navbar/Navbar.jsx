@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useInRouterContext, useLocation } from "react-router-dom";
 
 /**
  * Enhanced NPL Navbar
@@ -26,12 +26,18 @@ export default function Navbar({
 }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const location = useLocation();
+  const inRouter = useInRouterContext();
 
-  // Close mobile menu on route change
-  useEffect(() => {
-    setOpen(false);
-  }, [location.pathname]);
+  // Close mobile menu on route change (only when in Router context)
+  // Render a tiny inner component to safely use Router hooks
+  const CloseOnRoute = () => {
+    const loc = useLocation();
+    useEffect(() => {
+      setOpen(false);
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [loc.pathname]);
+    return null;
+  };
 
   // Apply shadow and stronger background after scrolling
   useEffect(() => {
@@ -57,6 +63,7 @@ export default function Navbar({
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="flex h-14 items-center justify-between">
+            {inRouter && <CloseOnRoute />}
             {/* Brand */}
             <Link to="/" className="flex items-center gap-3 group">
               <img
@@ -224,7 +231,7 @@ function LiveDot() {
 function WatchLiveButton({ onClick, className = "", full = false }) {
   const common =
     `${className} ${full ? "inline-flex w-full justify-center" : "inline-flex"} ` +
-    "items-center gap-2 rounded-md bg-gradient-to-r from-rose-600 to-red-600 px-4 py-2 " +
+    "items-center gap-2 rounded-md bg-linear-to-r from-rose-600 to-red-600 px-4 py-2 " +
     "text-sm font-semibold text-white shadow hover:from-red-600 hover:to-rose-600 transition " +
     "focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400/50";
 
