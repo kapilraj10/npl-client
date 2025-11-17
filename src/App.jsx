@@ -29,7 +29,6 @@ const App = () => {
         <Route path="/register" element={<Register />} />
         <Route path="/watch/:id" element={<Watch />} />
       </Routes>
-      <Live />
       <Upcoming />
       <Footer />
     </>
