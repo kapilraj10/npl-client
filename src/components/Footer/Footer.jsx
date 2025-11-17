@@ -108,7 +108,7 @@ export default function Footer({
                 }}
               />
               <div className="flex flex-col">
-                <span className="text-xl font-extrabold tracking-wide bg-gradient-to-r from-rose-600 to-red-600 bg-clip-text text-transparent">
+                <span className="text-xl font-extrabold tracking-wide bg-linear-to-r from-rose-600 to-red-600 bg-clip-text text-transparent">
                   NPL
                 </span>
                 <span className="text-xs text-gray-500">
@@ -244,7 +244,7 @@ export default function Footer({
               <button
                 type="submit"
                 disabled={status === "loading" || status === "success"}
-                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-rose-600 to-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:from-red-600 hover:to-rose-600 disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400/50"
+                className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-linear-to-r from-rose-600 to-red-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:from-red-600 hover:to-rose-600 disabled:cursor-not-allowed disabled:opacity-60 focus:outline-none focus-visible:ring-2 focus-visible:ring-rose-400/50"
               >
                 {status === "loading" && <Spinner className="h-4 w-4" />}
                 {status === "success" ? "Subscribed!" : "Subscribe"}
@@ -276,7 +276,7 @@ export default function Footer({
           </div>
         </div>
 
-        <div className="mt-10 h-px w-full bg-gradient-to-r from-transparent via-gray-300 to-transparent" />
+        <div className="mt-10 h-px w-full bg-linear-to-r from-transparent via-gray-300 to-transparent" />
 
         {/* Bottom bar */}
         <div className="mt-8 flex flex-col gap-4 md:flex-row md:items-center md:justify-between text-xs text-gray-600">

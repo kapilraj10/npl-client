@@ -1,12 +1,10 @@
 @import "tailwindcss";
 
-/* Base styles and ensure the whole app has a dark background. */
-html, body, #root {
-  height: 100%;
-}
+/* Base layout */
+html, body, #root { height: 100%; }
 html, body {
-  background: #0C0F14; /* matches sections */
-  color-scheme: dark;
+  background: #ffffff; /* unified light theme */
+  color-scheme: light;
   margin: 0;
 }
 

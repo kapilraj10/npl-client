@@ -2,9 +2,8 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 
-
-// https://vite.dev/config/
+// Tailwind CSS v4: use the official Vite plugin + index.css @import "tailwindcss"
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: './',
+  base: './', // './' works for relative paths, use '/' for root deployment
 })
